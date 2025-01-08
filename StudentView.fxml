@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="308.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.StudentController">
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Sistem Informasi Data Mahasiswa" />
+        <GridPane hgap="10.0" layoutX="14.0" layoutY="50.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints minWidth="100" />
+                <ColumnConstraints minWidth="200" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="30" />
+                <RowConstraints minHeight="30" />
+                <RowConstraints minHeight="30" />
+                <RowConstraints minHeight="30" />
+            </rowConstraints>
+            <children>
+                <Label text="Nama Lengkap" />
+                <TextField fx:id="txtNama" GridPane.columnIndex="1" />
+                <Label text="NIM" GridPane.rowIndex="1" />
+                <TextField fx:id="txtNIM" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="No Telepon" GridPane.rowIndex="2" />
+                <TextField fx:id="txtNoTelepon" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Fakultas" GridPane.rowIndex="3" />
+                <ComboBox fx:id="cmbFakultas" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </children>
+        </GridPane>
+        <TableView fx:id="tableView" layoutX="350.0" layoutY="50.0" prefHeight="200.0" prefWidth="400.0">
+            <columns>
+                <TableColumn fx:id="colNo" text="NO" />
+                <TableColumn fx:id="colNama" text="Nama" />
+                <TableColumn fx:id="colNIM" text="NIM" />
+                <TableColumn fx:id="colFakultas" text="Fakultas" />
+                <TableColumn fx:id="colNoTelepon" text="No Telepon" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnTambah" layoutX="14.0" layoutY="270.0" mnemonicParsing="false" onAction="#addStudent" text="Tambah" />
+        <Button fx:id="btnHapus" layoutX="100.0" layoutY="270.0" mnemonicParsing="false" onAction="#deleteStudent" text="Hapus" />
+        <Button fx:id="btnClear" layoutX="180.0" layoutY="270.0" mnemonicParsing="false" onAction="#clearFields" text="Clear" />
+    </children>
+</AnchorPane>
